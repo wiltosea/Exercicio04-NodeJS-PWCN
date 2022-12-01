@@ -10,6 +10,10 @@ authRouter.get("/logout", (req, res) => {
 });
 
 authRouter.get("/error", (req, res) => res.send("Unknown Error"));
+
+authRouter.get("/login", (req, res) => {
+    res.render("login");
+})
 authRouter.get(
     "/login/github",
     passport.authenticate("github", { scope: ["user:email"] })

@@ -24,10 +24,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use("/auth", authRouter)
+app.use("/auth", authRouter);
 
 app.get("/", isLoggedIn, (req, res) => {
-    res.send(`Hello world ${req.user.displayName}`);
+    res.render("index", { user: req.user });
 });
 
 app.listen(3000, () => {
