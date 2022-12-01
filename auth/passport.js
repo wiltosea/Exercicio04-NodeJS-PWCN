@@ -16,7 +16,7 @@ export function initializeStrategies(app) {
             {
                 clientID: "Iv1.548ff23fa6488557",
                 clientSecret: "b653e39e57df1ee1fd9dfb1a324b55f61b4e7f84",
-                callbackURL: `${urls.application}/login/github/callback`,
+                callbackURL: `${urls.application}/auth/login/github/callback`,
             },
             function (accessToken, refreshToken, profile, done) {
                 return done(null, profile);
