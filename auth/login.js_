@@ -1,0 +1,17 @@
+import { Router } from "express";
+import passport from "passport";
+
+export const loginRouter = Router();
+
+loginRouter.get("/", (req, res) => {
+    const { body } = req.params.body;
+    res.send("login", body);
+});
+
+loginRouter.post(
+    "/github",
+    passport.authenticate("local", {
+        successRedirect: "/admin",
+        failureFlash: "/admin",
+    })
+);
